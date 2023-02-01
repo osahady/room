@@ -25,6 +25,7 @@ defmodule RoomWeb.RoomChannel do
     {:noreply, socket}
   end
 
+  @impl true
   def handle_in("new_msg", payload, socket) do
     broadcast(socket, "new_msg", payload)
     {:noreply, socket}
